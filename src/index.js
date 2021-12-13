@@ -1,17 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import express from "express"
+import morgan from "morgan"
+import cors from "cors"
+import path from "path"
+import router from "./routes/producto.routes"
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const app = express()
+app.set("port",process.env.PORT || 5000)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+app.listen(app.get("port"),()=>{
+  console.log("estoy en el puerto "+app.get("port"))
+  console.log(path.join(__dirname,"../public"))
+  })
+
+ 
+app.use(morgan("dev")) 
+app.use(cors())
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+app.use(express.static(path.join(__dirname,"../public")))
+
+app.use("/apinoticias",router)
