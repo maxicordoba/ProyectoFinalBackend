@@ -2,7 +2,7 @@ import express from "express"
 import morgan from "morgan"
 import cors from "cors"
 import path from "path"
-import router from "./routes/producto.routes"
+import router from "./routes/noticias.routes"
 import "./database"
 
 const app = express()
