@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const url = "mongodb://127.0.0.1:27017/crudcafe"
+const url = "mongodb://127.0.0.1:27017/proyectofinalbackend"
 
 mongoose.connect(url)
 
