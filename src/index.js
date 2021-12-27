@@ -6,7 +6,7 @@ import router from "./routes/noticias.routes"
 import "./database"
 
 const app = express()
-app.set("port",process.env.PORT || 5000)
+app.set("port",process.env.PORT || 6000)
 
 app.listen(app.get("port"),()=>{
   console.log("estoy en el puerto "+app.get("port"))
