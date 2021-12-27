@@ -1,6 +1,6 @@
 import Noticia from "../models/noticia"
 
-const noticiaCtrl={}
+export const noticiaCtrl={}
 
 noticiaCtrl.borrarnoticia = (req,res)=>{
     res.send("ALGUIEN QUIERE BORRAR")
