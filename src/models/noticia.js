@@ -22,7 +22,6 @@ const noticiaSchema = new Schema({
         type: String,
         required:true,
     },
-
     //2
 
     titulo:{
@@ -45,7 +44,7 @@ const noticiaSchema = new Schema({
         type:String,
         required:true
     },
-    categoria:{
+    tipo:{
         type:Number,
         required:true,
         minlength:1
@@ -57,9 +56,13 @@ const noticiaSchema = new Schema({
     fechaGuardar:{
         type:String,
         required:true
-    }
-
+    },
     //3
+
+    categoria:{
+        type:String,
+        required:true
+    }
 
 })
 
