@@ -8,4 +8,10 @@ router2
   .post(cuentaCtrl.nuevocuenta)
   .get(cuentaCtrl.traercuenta)
 
+router2
+.route("/:id")
+.get(cuentaCtrl.obtenercuenta)
+.delete(cuentaCtrl.borrarcuenta)
+.put(cuentaCtrl.editarcuenta);
+
 export default router2;

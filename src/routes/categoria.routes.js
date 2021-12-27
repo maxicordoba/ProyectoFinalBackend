@@ -7,5 +7,10 @@ router3
   .route("/")
   .post(categoriaCtrl.nuevocategoria)
   .get(categoriaCtrl.traercategoria)
+  router3
+  .route("/:id")
+  .get(categoriaCtrl.obtenercategoria)
+  .delete(categoriaCtrl.borrarcategoria)
+  .put(categoriaCtrl.editarcategoria);
 
 export default router3;

@@ -2,10 +2,6 @@ import Noticia from "../models/noticia"
 
 export const noticiaCtrl={}
 
-noticiaCtrl.borrarnoticia = (req,res)=>{
-    res.send("ALGUIEN QUIERE BORRAR")
-}
-
 noticiaCtrl.nuevonoticia = async (req,res)=>{
     try{
         const noticiaNueva = new Noticia({
@@ -21,15 +17,49 @@ noticiaCtrl.nuevonoticia = async (req,res)=>{
         await noticiaNueva.save()
         res.status(201).json({mensaje: 'Noticia creada correctamente'})
     }catch(error){
-        res.status(400).json({mensaje: 'Error al crear el producto'})
+        res.status(400).json({mensaje: 'Error al crear la noticia'})
         console.log(error)
     }
     }
 
+    //desde aca hacer para lo demas este es el LISTAR TODOS los elementos
 noticiaCtrl.traernoticia = async(req,res)=>{
     try{
+        const traernoticia = await Noticia.find()
+        res.status(200).json(traernoticia)
 
     }catch(error){
-        res.status(404).json({mensaje: 'No se encontro el producto'})
+        res.status(404).json({mensaje: 'No se encontraron las noticias'})
+    }
+}
+//traer un elemento en particular
+noticiaCtrl.obtenernoticia = async(req,res)=>{
+    try{
+        const obtenernoticia = await Noticia.findById(req.params.id)
+        res.status(200).json(obtenernoticia)
+                 
+    }catch(error){
+        res.status(404).json({mensaje: 'No se encontro la noticia'})
+    }
+}
+
+//esto es nuevo es borrar
+noticiaCtrl.borrarnoticia = async(req,res)=>{
+    try{
+        await Noticia.findByIdAndDelete(req.params.id)
+        res.status(200).json({mensaje: "Se pudo eliminar la noticia"})
+                 
+    }catch(error){
+        res.status(404).json({mensaje: 'No se pudo borrar la noticia'})
+    }
+}
+//esto es editar
+noticiaCtrl.editarnoticia = async(req,res)=>{
+    try{
+        await Noticia.findByIdAndUpdate(req.params.id,req.body)
+        res.status(200).json({mensaje: "Si se pudo editar la noticia"})
+                 
+    }catch(error){
+        res.status(404).json({mensaje: 'No se pudo editar la noticia'})
     }
 }
