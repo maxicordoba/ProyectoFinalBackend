@@ -5,7 +5,6 @@ const router = Router();
 
 router
   .route("/")
-  .delete(noticiaCtrl.borrarnoticia)
   .post(noticiaCtrl.nuevonoticia)
   .get(noticiaCtrl.traernoticia)
 

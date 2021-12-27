@@ -3,6 +3,7 @@ import morgan from "morgan"
 import cors from "cors"
 import path from "path"
 import router from "./routes/noticias.routes"
+import router2 from "./routes/cuenta.routes"
 import "./database"
 
 const app = express()
@@ -21,3 +22,4 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname,"../public")))
 
 app.use("/apinoticias",router)
+app.use("/apicuenta",router2)
