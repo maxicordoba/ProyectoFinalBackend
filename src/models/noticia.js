@@ -63,9 +63,6 @@ const noticiaSchema = new Schema({
 
 })
 
-
-//cada vez que guarde una noticia, modifique, se guarda en el archivo Noticia
-
 const Noticia = mongoose.model("noticia",noticiaSchema)
 
 export default Noticia
