@@ -15,7 +15,7 @@ categoriaCtrl.nuevocategoria = async (req,res)=>{
     }
     }
 
-//desde aca hacer para lo demas este es el LISTAR TODOS los elementos
+
 categoriaCtrl.traercategoria = async(req,res)=>{
     try{
         const traercategoria = await Categoria.find()
@@ -25,7 +25,7 @@ categoriaCtrl.traercategoria = async(req,res)=>{
         res.status(404).json({mensaje: 'No se encontraron las categorias'})
     }
 }
-//traer un elemento en particular
+
 categoriaCtrl.obtenercategoria = async(req,res)=>{
     try{
         const obtenercategoria = await Categoria.findById(req.params.id)
@@ -36,7 +36,7 @@ categoriaCtrl.obtenercategoria = async(req,res)=>{
     }
 }
 
-//esto es nuevo es borrar
+
 categoriaCtrl.borrarcategoria = async(req,res)=>{
     try{
         await Categoria.findByIdAndDelete(req.params.id)
@@ -46,7 +46,7 @@ categoriaCtrl.borrarcategoria = async(req,res)=>{
         res.status(404).json({mensaje: 'No se pudo borrar la categoria'})
     }
 }
-//esto es editar
+
 categoriaCtrl.editarcategoria = async(req,res)=>{
     try{
         await Categoria.findByIdAndUpdate(req.params.id,req.body)

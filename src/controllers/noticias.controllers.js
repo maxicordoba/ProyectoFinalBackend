@@ -22,7 +22,7 @@ noticiaCtrl.nuevonoticia = async (req,res)=>{
     }
     }
 
-    //desde aca hacer para lo demas este es el LISTAR TODOS los elementos
+
 noticiaCtrl.traernoticia = async(req,res)=>{
     try{
         const traernoticia = await Noticia.find()
@@ -32,7 +32,7 @@ noticiaCtrl.traernoticia = async(req,res)=>{
         res.status(404).json({mensaje: 'No se encontraron las noticias'})
     }
 }
-//traer un elemento en particular
+
 noticiaCtrl.obtenernoticia = async(req,res)=>{
     try{
         const obtenernoticia = await Noticia.findById(req.params.id)
@@ -43,7 +43,7 @@ noticiaCtrl.obtenernoticia = async(req,res)=>{
     }
 }
 
-//esto es nuevo es borrar
+
 noticiaCtrl.borrarnoticia = async(req,res)=>{
     try{
         await Noticia.findByIdAndDelete(req.params.id)
@@ -53,7 +53,7 @@ noticiaCtrl.borrarnoticia = async(req,res)=>{
         res.status(404).json({mensaje: 'No se pudo borrar la noticia'})
     }
 }
-//esto es editar
+
 noticiaCtrl.editarnoticia = async(req,res)=>{
     try{
         await Noticia.findByIdAndUpdate(req.params.id,req.body)
