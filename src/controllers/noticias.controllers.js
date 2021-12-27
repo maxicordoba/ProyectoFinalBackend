@@ -1,12 +1,14 @@
-export const noticiaCtrl={}
+import Noticia from "../models/noticia"
 
-noticiaCtrl.borrarProducto = (req,res)=>{
+const noticiaCtrl={}
+
+noticiaCtrl.borrarnoticia = (req,res)=>{
     res.send("ALGUIEN QUIERE BORRAR")
 }
 
-noticiaCtrl.nuevoProducto = (req,res)=>{
+noticiaCtrl.nuevonoticia = (req,res)=>{
     res.send("ALGUIEN QUIERE AGREGAR UN OBJETO")}
 
-noticiaCtrl.traerProducto = (req,res)=>{
-    res.send("TRAE EL PRODUCTO")
+noticiaCtrl.traernoticia = (req,res)=>{
+    res.send("TRAE LA NOTICIA")
 }
