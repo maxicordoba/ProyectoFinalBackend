@@ -1,5 +1,4 @@
 import Noticia from "../models/noticia"
-import Categoria from "../models/categoria"
 
 export const noticiaCtrl={}
 

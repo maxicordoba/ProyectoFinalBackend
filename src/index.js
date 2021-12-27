@@ -4,6 +4,7 @@ import cors from "cors"
 import path from "path"
 import router from "./routes/noticias.routes"
 import router2 from "./routes/cuenta.routes"
+import router3 from "./routes/categoria.routes"
 import "./database"
 
 const app = express()
@@ -23,3 +24,4 @@ app.use(express.static(path.join(__dirname,"../public")))
 
 app.use("/apinoticias",router)
 app.use("/apicuenta",router2)
+app.use("/apicategoria",router3)
