@@ -21,7 +21,7 @@ const noticiaSchema = new Schema({
         
     },
     tipo:{
-        type:String,
+        type:Number,
         minlength:1
     },
     fecha:{
